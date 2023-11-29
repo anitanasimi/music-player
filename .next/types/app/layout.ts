@@ -1,4 +1,4 @@
-// File: C:\Users\anita\Desktop\three-quarter-term-anitanasimi\app\layout.tsx
+// File: C:\Users\Pc\Desktop\project\music-player\music-player-app\app\layout.tsx
 import * as entry from '../../../app/layout.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 
