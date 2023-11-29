@@ -35,11 +35,18 @@ export default async function RootLayout({
                   <a href="/" className="bg-pink-500 hover:bg-pink-700 text-white font-bold py-2 px-4 rounded">Home</a>
                 </li>
                 {isLoggedIn ? (
+                  <>
                   <li>
                     <Link href="/profile" className="bg-pink-500 hover:bg-pink-700 text-white font-bold py-2 px-4 rounded">
                       Profile
                     </Link>
                   </li>
+                  <li>
+                  <Link href="/playlist" className="bg-cyan-900 hover:bg-pink-700 text-white font-bold py-2 px-4 rounded">
+                      Playlist
+                    </Link>
+                  </li>
+                </>
                 ) : (
                   <li>
                     <Link href="/api/auth/signin" className="bg-pink-500 hover:bg-pink-700 text-white font-bold py-2 px-4 rounded">
