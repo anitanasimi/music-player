@@ -1,5 +1,22 @@
 {
-  "node": {},
+  "node": {
+    "3fe24697ec76c106af64c51746603ac587fa4f4f": {
+      "workers": {
+        "app/add-music/page": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22C%3A%5C%5CUsers%5C%5CPc%5C%5CDesktop%5C%5Cproject%5C%5Cmusic-player%5C%5Cmusic-player-app%5C%5Capp%5C%5Cadd-music%5C%5Cactions.ts%22%2C%5B%22createMusic%22%5D%5D%5D&__client_imported__=true!"
+      },
+      "layer": {
+        "app/add-music/page": "action-browser"
+      }
+    },
+    "466da6798df7c01a05d606d5a703f3ea3199b672": {
+      "workers": {
+        "app/add-music/page": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22C%3A%5C%5CUsers%5C%5CPc%5C%5CDesktop%5C%5Cproject%5C%5Cmusic-player%5C%5Cmusic-player-app%5C%5Capp%5C%5Cadd-music%5C%5Cactions.ts%22%2C%5B%22createMusic%22%5D%5D%5D&__client_imported__=true!"
+      },
+      "layer": {
+        "app/add-music/page": "action-browser"
+      }
+    }
+  },
   "edge": {},
-  "encryptionKey": "WggbqOeMLh3gHUn/XuMaXvgSbBZ9OJiouluPJs8g42U="
+  "encryptionKey": "+BAGgQCyjWL9Wh+Pk7D9RuD66YAeaRKAsNKPZxxTbAc="
 }

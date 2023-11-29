@@ -37,17 +37,37 @@ export default function MusicPlayer(music: Music) {
                 id: music.id, // replace with the actual id or data you need to send
             }),
         })
-            .then(response => response.json())
-            .then(data => {
-                console.log(data);
-                if (data.message === 'ok') {
-                    // handle successful deletion here, e.g., remove item from state
+            .then(response => {
+                const contentType = response.headers.get('content-type');
+                if (contentType && contentType.indexOf('application/json') !== -1) {
+                    return response.json().then(data => {
+                        if (data === 'ok') {
+                            alert('done')
+                            window.location.href = "/playlist";
+                        } else {
+                            if (data === 'NotFound') {
+                                alert('Music Not Found')
+                            }
+                        }
+                    });
+                } else {
+                    return response.text().then(text => {
+                        if (text === 'ok') {
+                            alert('done')
+                            window.location.href = "/playlist";
+                        } else {
+                            if (text === 'NotFound') {
+                                alert('Music Not Found')
+                            }
+                        }
+                    });
                 }
             })
             .catch((error) => {
                 console.error('Error:', error);
             });
     };
+
 
     useEffect(() => {
         const audio = audioRef.current;
@@ -68,6 +88,7 @@ export default function MusicPlayer(music: Music) {
         <div className="flex items-center justify-center h-64 w-64 bg-pink-500 rounded-xl p-2 m-3">
             <div className="max-w-md mx-auto bg-white rounded-xl shadow-md overflow-hidden md:max-w-2xl m-4">
                 <div className="md:flex">
+                    <div className="music-image" style={{ backgroundImage: 'url(image-url)', height: '200px', backgroundSize: 'cover' }}></div>
                     <div className="p-8">
                         <div className="uppercase tracking-wide text-sm text-indigo-500 font-semibold">Music Player</div>
                         <div className="block mt-1 text-lg leading-tight font-medium text-black hover:underline">{music.title} - {music.artist}</div>
@@ -90,6 +111,7 @@ export default function MusicPlayer(music: Music) {
                 </div>
             </div>
         </div>
+
 
     );
 }

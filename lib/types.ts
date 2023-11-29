@@ -6,3 +6,8 @@ export interface Music {
     url: string;
     createdAt: Date;
 }
+
+export interface MusicInfo {
+    artist: string;
+    title: string;
+}
