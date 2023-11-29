@@ -63,16 +63,6 @@ module.exports = require("next/dist\\client\\components\\static-generation-async
 
 /***/ }),
 
-/***/ "buffer":
-/*!*************************!*\
-  !*** external "buffer" ***!
-  \*************************/
-/***/ ((module) => {
-
-module.exports = require("buffer");
-
-/***/ }),
-
 /***/ "crypto":
 /*!*************************!*\
   !*** external "crypto" ***!
@@ -83,53 +73,63 @@ module.exports = require("crypto");
 
 /***/ }),
 
-/***/ "events":
-/*!*************************!*\
-  !*** external "events" ***!
-  \*************************/
+/***/ "node:buffer":
+/*!******************************!*\
+  !*** external "node:buffer" ***!
+  \******************************/
 /***/ ((module) => {
 
-module.exports = require("events");
+module.exports = require("node:buffer");
 
 /***/ }),
 
-/***/ "http":
-/*!***********************!*\
-  !*** external "http" ***!
-  \***********************/
+/***/ "node:crypto":
+/*!******************************!*\
+  !*** external "node:crypto" ***!
+  \******************************/
 /***/ ((module) => {
 
-module.exports = require("http");
+module.exports = require("node:crypto");
 
 /***/ }),
 
-/***/ "https":
-/*!************************!*\
-  !*** external "https" ***!
-  \************************/
+/***/ "node:events":
+/*!******************************!*\
+  !*** external "node:events" ***!
+  \******************************/
 /***/ ((module) => {
 
-module.exports = require("https");
+module.exports = require("node:events");
 
 /***/ }),
 
-/***/ "util":
-/*!***********************!*\
-  !*** external "util" ***!
-  \***********************/
+/***/ "node:http":
+/*!****************************!*\
+  !*** external "node:http" ***!
+  \****************************/
 /***/ ((module) => {
 
-module.exports = require("util");
+module.exports = require("node:http");
 
 /***/ }),
 
-/***/ "zlib":
-/*!***********************!*\
-  !*** external "zlib" ***!
-  \***********************/
+/***/ "node:https":
+/*!*****************************!*\
+  !*** external "node:https" ***!
+  \*****************************/
 /***/ ((module) => {
 
-module.exports = require("zlib");
+module.exports = require("node:https");
+
+/***/ }),
+
+/***/ "node:util":
+/*!****************************!*\
+  !*** external "node:util" ***!
+  \****************************/
+/***/ ((module) => {
+
+module.exports = require("node:util");
 
 /***/ }),
 
@@ -159,7 +159,17 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
   \*********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   auth: () => (/* binding */ auth),\n/* harmony export */   handlers: () => (/* binding */ handlers)\n/* harmony export */ });\n/* harmony import */ var next_auth__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! next-auth */ \"(rsc)/./node_modules/next-auth/index.js\");\n/* harmony import */ var next_auth_providers_github__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! next-auth/providers/github */ \"(rsc)/./node_modules/next-auth/providers/github.js\");\n\n\nconst { handlers, auth } = (0,next_auth__WEBPACK_IMPORTED_MODULE_0__[\"default\"])({\n    providers: [\n        next_auth_providers_github__WEBPACK_IMPORTED_MODULE_1__[\"default\"]\n    ]\n});\n//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiKHJzYykvLi9hcHAvYXV0aC50cyIsIm1hcHBpbmdzIjoiOzs7Ozs7O0FBQWdDO0FBQ2U7QUFDeEMsTUFBTSxFQUFFRSxRQUFRLEVBQUVDLElBQUksRUFBRSxHQUFHSCxxREFBUUEsQ0FBQztJQUFFSSxXQUFXO1FBQUVILGtFQUFNQTtLQUFFO0FBQUMsR0FBRSIsInNvdXJjZXMiOlsid2VicGFjazovL211c2ljLXBsYXllci1hcHAvLi9hcHAvYXV0aC50cz83NjM4Il0sInNvdXJjZXNDb250ZW50IjpbImltcG9ydCBOZXh0QXV0aCBmcm9tIFwibmV4dC1hdXRoXCJcclxuaW1wb3J0IEdpdEh1YiBmcm9tIFwibmV4dC1hdXRoL3Byb3ZpZGVycy9naXRodWJcIlxyXG5leHBvcnQgY29uc3QgeyBoYW5kbGVycywgYXV0aCB9ID0gTmV4dEF1dGgoeyBwcm92aWRlcnM6IFsgR2l0SHViIF0gfSkiXSwibmFtZXMiOlsiTmV4dEF1dGgiLCJHaXRIdWIiLCJoYW5kbGVycyIsImF1dGgiLCJwcm92aWRlcnMiXSwic291cmNlUm9vdCI6IiJ9\n//# sourceURL=webpack-internal:///(rsc)/./app/auth.ts\n");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   auth: () => (/* binding */ auth),\n/* harmony export */   handlers: () => (/* binding */ handlers)\n/* harmony export */ });\n/* harmony import */ var next_auth__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! next-auth */ \"(rsc)/./node_modules/next-auth/index.js\");\n/* harmony import */ var next_auth_providers_github__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! next-auth/providers/github */ \"(rsc)/./node_modules/next-auth/providers/github.js\");\n/* harmony import */ var _auth_drizzle_adapter__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @auth/drizzle-adapter */ \"(rsc)/./node_modules/@auth/drizzle-adapter/index.js\");\n/* harmony import */ var _db__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @/db */ \"(rsc)/./db/index.ts\");\n\n\n\n\nconst { handlers, auth } = (0,next_auth__WEBPACK_IMPORTED_MODULE_0__[\"default\"])({\n    providers: [\n        next_auth_providers_github__WEBPACK_IMPORTED_MODULE_1__[\"default\"]\n    ],\n    adapter: (0,_auth_drizzle_adapter__WEBPACK_IMPORTED_MODULE_2__.DrizzleAdapter)(_db__WEBPACK_IMPORTED_MODULE_3__.db)\n});\n//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiKHJzYykvLi9hcHAvYXV0aC50cyIsIm1hcHBpbmdzIjoiOzs7Ozs7Ozs7QUFBZ0M7QUFDZTtBQUNPO0FBQzdCO0FBRWxCLE1BQU0sRUFBRUksUUFBUSxFQUFFQyxJQUFJLEVBQUUsR0FBR0wscURBQVFBLENBQUM7SUFBRU0sV0FBVztRQUFDTCxrRUFBTUE7S0FBQztJQUFFTSxTQUFTTCxxRUFBY0EsQ0FBQ0MsbUNBQUVBO0FBQUUsR0FBRSIsInNvdXJjZXMiOlsid2VicGFjazovL211c2ljLXBsYXllci1hcHAvLi9hcHAvYXV0aC50cz83NjM4Il0sInNvdXJjZXNDb250ZW50IjpbImltcG9ydCBOZXh0QXV0aCBmcm9tIFwibmV4dC1hdXRoXCJcclxuaW1wb3J0IEdpdEh1YiBmcm9tIFwibmV4dC1hdXRoL3Byb3ZpZGVycy9naXRodWJcIlxyXG5pbXBvcnQgeyBEcml6emxlQWRhcHRlciB9IGZyb20gXCJAYXV0aC9kcml6emxlLWFkYXB0ZXJcIlxyXG5pbXBvcnQgeyBkYiB9IGZyb20gXCJAL2RiXCJcclxuXHJcbmV4cG9ydCBjb25zdCB7IGhhbmRsZXJzLCBhdXRoIH0gPSBOZXh0QXV0aCh7IHByb3ZpZGVyczogW0dpdEh1Yl0sIGFkYXB0ZXI6IERyaXp6bGVBZGFwdGVyKGRiKSB9KSJdLCJuYW1lcyI6WyJOZXh0QXV0aCIsIkdpdEh1YiIsIkRyaXp6bGVBZGFwdGVyIiwiZGIiLCJoYW5kbGVycyIsImF1dGgiLCJwcm92aWRlcnMiLCJhZGFwdGVyIl0sInNvdXJjZVJvb3QiOiIifQ==\n//# sourceURL=webpack-internal:///(rsc)/./app/auth.ts\n");
+
+/***/ }),
+
+/***/ "(rsc)/./db/index.ts":
+/*!*********************!*\
+  !*** ./db/index.ts ***!
+  \*********************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   db: () => (/* binding */ db)\n/* harmony export */ });\n/* harmony import */ var _neondatabase_serverless__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @neondatabase/serverless */ \"(rsc)/./node_modules/@neondatabase/serverless/index.mjs\");\n/* harmony import */ var drizzle_orm_neon_http__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! drizzle-orm/neon-http */ \"(rsc)/./node_modules/drizzle-orm/neon-http/driver.js\");\n\n\nconst sql = (0,_neondatabase_serverless__WEBPACK_IMPORTED_MODULE_0__.neon)(process.env.DATABASE_URL);\nconst db = (0,drizzle_orm_neon_http__WEBPACK_IMPORTED_MODULE_1__.drizzle)(sql);\n//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiKHJzYykvLi9kYi9pbmRleC50cyIsIm1hcHBpbmdzIjoiOzs7Ozs7QUFBK0M7QUFDQTtBQUcvQyxNQUFNRSxNQUFNRiw4REFBSUEsQ0FBQ0csUUFBUUMsR0FBRyxDQUFDQyxZQUFZO0FBQ2xDLE1BQU1DLEtBQUtMLDhEQUFPQSxDQUFDQyxLQUFLIiwic291cmNlcyI6WyJ3ZWJwYWNrOi8vbXVzaWMtcGxheWVyLWFwcC8uL2RiL2luZGV4LnRzP2JhNzEiXSwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IHsgbmVvbiB9IGZyb20gJ0BuZW9uZGF0YWJhc2Uvc2VydmVybGVzcydcclxuaW1wb3J0IHsgZHJpenpsZSB9IGZyb20gJ2RyaXp6bGUtb3JtL25lb24taHR0cCdcclxuXHJcblxyXG5jb25zdCBzcWwgPSBuZW9uKHByb2Nlc3MuZW52LkRBVEFCQVNFX1VSTCEpO1xyXG5leHBvcnQgY29uc3QgZGIgPSBkcml6emxlKHNxbCk7XHJcbiJdLCJuYW1lcyI6WyJuZW9uIiwiZHJpenpsZSIsInNxbCIsInByb2Nlc3MiLCJlbnYiLCJEQVRBQkFTRV9VUkwiLCJkYiJdLCJzb3VyY2VSb290IjoiIn0=\n//# sourceURL=webpack-internal:///(rsc)/./db/index.ts\n");
 
 /***/ })
 
@@ -170,7 +180,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 var __webpack_require__ = require("../../../../webpack-runtime.js");
 __webpack_require__.C(exports);
 var __webpack_exec__ = (moduleId) => (__webpack_require__(__webpack_require__.s = moduleId))
-var __webpack_exports__ = __webpack_require__.X(0, ["vendor-chunks/next","vendor-chunks/@swc","vendor-chunks/jose","vendor-chunks/@auth","vendor-chunks/oauth4webapi","vendor-chunks/preact","vendor-chunks/next-auth","vendor-chunks/preact-render-to-string","vendor-chunks/cookie","vendor-chunks/@panva"], () => (__webpack_exec__("(rsc)/./node_modules/next/dist/build/webpack/loaders/next-app-loader.js?name=app%2Fapi%2Fauth%2F%5B...nextauth%5D%2Froute&page=%2Fapi%2Fauth%2F%5B...nextauth%5D%2Froute&appPaths=&pagePath=private-next-app-dir%2Fapi%2Fauth%2F%5B...nextauth%5D%2Froute.ts&appDir=C%3A%5CUsers%5CPc%5CDesktop%5Cproject%5Cmusic-player%5Cmusic-player-app%5Capp&pageExtensions=tsx&pageExtensions=ts&pageExtensions=jsx&pageExtensions=js&rootDir=C%3A%5CUsers%5CPc%5CDesktop%5Cproject%5Cmusic-player%5Cmusic-player-app&isDev=true&tsconfigPath=tsconfig.json&basePath=&assetPrefix=&nextConfigOutput=&preferredRegion=&middlewareConfig=e30%3D!")));
+var __webpack_exports__ = __webpack_require__.X(0, ["vendor-chunks/next","vendor-chunks/@swc","vendor-chunks/drizzle-orm","vendor-chunks/@neondatabase","vendor-chunks/@auth","vendor-chunks/jose","vendor-chunks/oauth4webapi","vendor-chunks/preact","vendor-chunks/next-auth","vendor-chunks/preact-render-to-string","vendor-chunks/cookie","vendor-chunks/@panva"], () => (__webpack_exec__("(rsc)/./node_modules/next/dist/build/webpack/loaders/next-app-loader.js?name=app%2Fapi%2Fauth%2F%5B...nextauth%5D%2Froute&page=%2Fapi%2Fauth%2F%5B...nextauth%5D%2Froute&appPaths=&pagePath=private-next-app-dir%2Fapi%2Fauth%2F%5B...nextauth%5D%2Froute.ts&appDir=C%3A%5CUsers%5CPc%5CDesktop%5Cproject%5Cmusic-player%5Cmusic-player-app%5Capp&pageExtensions=tsx&pageExtensions=ts&pageExtensions=jsx&pageExtensions=js&rootDir=C%3A%5CUsers%5CPc%5CDesktop%5Cproject%5Cmusic-player%5Cmusic-player-app&isDev=true&tsconfigPath=tsconfig.json&basePath=&assetPrefix=&nextConfigOutput=&preferredRegion=&middlewareConfig=e30%3D!")));
 module.exports = __webpack_exports__;
 
 })();
