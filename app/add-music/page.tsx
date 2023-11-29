@@ -1,6 +1,6 @@
 "use client"
 
-import {useState} from 'react'
+import { useState } from 'react'
 
 const AddMusicPage = () => {
     const [title, setTitle] = useState('');
@@ -18,8 +18,14 @@ const AddMusicPage = () => {
                 alert('File size exceeds 20MB');
                 return;
             }
+        } else {
+            alert('No file selected. Please choose an audio file to proceed.');
+            return;
         }
-        // handle form submission here
+        await fetch("/api/add-music", {
+            method: "POST",
+            body: new FormData(e.target as HTMLFormElement),
+        })        
     };
 
     return (

@@ -3,6 +3,8 @@ import { Inter } from 'next/font/google'
 import './globals.css'
 import { auth } from '@/app/auth'
 import Link from 'next/link'
+import { Suspense } from 'react';
+import Loading from './loading';
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -68,7 +70,9 @@ export default async function RootLayout({
           </nav>
         </header>
         <main className="container mx-auto flex items-center justify-between p-4">
-          {children}
+        <Suspense fallback={<Loading />}>
+            {children}
+        </Suspense>
         </main>
       </body>
     </html>
