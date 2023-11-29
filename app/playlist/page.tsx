@@ -23,30 +23,6 @@ const PlayListPage = async () => {
         MusicList = await getMusicsByUserId(user.email);
     }
 
-    let newMusic: Music = {
-        id: 123,
-        userId: 'user1',
-        artist: 'New Artist',
-        title: 'New Title',
-        url: './Mockingbird.mp3',
-        createdAt: new Date(),
-    };
-    let newMusic2: Music = {
-        id: 123,
-        userId: 'user1',
-        artist: 'New Artist',
-        title: 'New Title',
-        url: './Mockingbird.mp3',
-        createdAt: new Date(),
-    };
-
-    MusicList.push(newMusic);
-    MusicList.push(newMusic);
-    MusicList.push(newMusic);
-    MusicList.push(newMusic);
-    MusicList.push(newMusic);
-    MusicList.push(newMusic);
-
     return (
         <div>
             <div className="mb-4">

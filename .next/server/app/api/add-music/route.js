@@ -13,6 +13,16 @@ exports.id = "app/api/add-music/route";
 exports.ids = ["app/api/add-music/route"];
 exports.modules = {
 
+/***/ "next/dist/compiled/next-server/app-page.runtime.dev.js":
+/*!*************************************************************************!*\
+  !*** external "next/dist/compiled/next-server/app-page.runtime.dev.js" ***!
+  \*************************************************************************/
+/***/ ((module) => {
+
+module.exports = require("next/dist/compiled/next-server/app-page.runtime.dev.js");
+
+/***/ }),
+
 /***/ "next/dist/compiled/next-server/app-route.runtime.dev.js":
 /*!**************************************************************************!*\
   !*** external "next/dist/compiled/next-server/app-route.runtime.dev.js" ***!
@@ -23,13 +33,53 @@ module.exports = require("next/dist/compiled/next-server/app-route.runtime.dev.j
 
 /***/ }),
 
-/***/ "domain":
+/***/ "../../client/components/action-async-storage.external":
+/*!**********************************************************************************!*\
+  !*** external "next/dist\\client\\components\\action-async-storage.external.js" ***!
+  \**********************************************************************************/
+/***/ ((module) => {
+
+module.exports = require("next/dist\\client\\components\\action-async-storage.external.js");
+
+/***/ }),
+
+/***/ "../../client/components/request-async-storage.external":
+/*!***********************************************************************************!*\
+  !*** external "next/dist\\client\\components\\request-async-storage.external.js" ***!
+  \***********************************************************************************/
+/***/ ((module) => {
+
+module.exports = require("next/dist\\client\\components\\request-async-storage.external.js");
+
+/***/ }),
+
+/***/ "../../client/components/static-generation-async-storage.external":
+/*!*********************************************************************************************!*\
+  !*** external "next/dist\\client\\components\\static-generation-async-storage.external.js" ***!
+  \*********************************************************************************************/
+/***/ ((module) => {
+
+module.exports = require("next/dist\\client\\components\\static-generation-async-storage.external.js");
+
+/***/ }),
+
+/***/ "crypto":
 /*!*************************!*\
-  !*** external "domain" ***!
+  !*** external "crypto" ***!
   \*************************/
 /***/ ((module) => {
 
-module.exports = require("domain");
+module.exports = require("crypto");
+
+/***/ }),
+
+/***/ "node:buffer":
+/*!******************************!*\
+  !*** external "node:buffer" ***!
+  \******************************/
+/***/ ((module) => {
+
+module.exports = require("node:buffer");
 
 /***/ }),
 
@@ -53,63 +103,33 @@ module.exports = require("node:events");
 
 /***/ }),
 
-/***/ "node:fs":
-/*!**************************!*\
-  !*** external "node:fs" ***!
-  \**************************/
-/***/ ((module) => {
-
-module.exports = require("node:fs");
-
-/***/ }),
-
-/***/ "node:fs/promises":
-/*!***********************************!*\
-  !*** external "node:fs/promises" ***!
-  \***********************************/
-/***/ ((module) => {
-
-module.exports = require("node:fs/promises");
-
-/***/ }),
-
-/***/ "node:os":
-/*!**************************!*\
-  !*** external "node:os" ***!
-  \**************************/
-/***/ ((module) => {
-
-module.exports = require("node:os");
-
-/***/ }),
-
-/***/ "node:path":
+/***/ "node:http":
 /*!****************************!*\
-  !*** external "node:path" ***!
+  !*** external "node:http" ***!
   \****************************/
 /***/ ((module) => {
 
-module.exports = require("node:path");
+module.exports = require("node:http");
 
 /***/ }),
 
-/***/ "node:stream":
-/*!******************************!*\
-  !*** external "node:stream" ***!
-  \******************************/
+/***/ "node:https":
+/*!*****************************!*\
+  !*** external "node:https" ***!
+  \*****************************/
 /***/ ((module) => {
 
-module.exports = require("node:stream");
+module.exports = require("node:https");
 
 /***/ }),
 
-/***/ "node:string_decoder":
-/*!**************************************!*\
-  !*** external "node:string_decoder" ***!
-  \**************************************/
+/***/ "node:util":
+/*!****************************!*\
+  !*** external "node:util" ***!
+  \****************************/
 /***/ ((module) => {
 
-module.exports = require("node:string_decoder");
+module.exports = require("node:util");
 
 /***/ }),
 
@@ -129,7 +149,67 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
   \************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   config: () => (/* binding */ config),\n/* harmony export */   \"default\": () => (/* binding */ handler)\n/* harmony export */ });\n/* harmony import */ var formidable__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! formidable */ \"(rsc)/./node_modules/formidable/src/index.js\");\n// pages/api/add-music.ts\n\nconst config = {\n    api: {\n        bodyParser: false\n    }\n};\nasync function handler(req, res) {\n    const form = new formidable__WEBPACK_IMPORTED_MODULE_0__[\"default\"].IncomingForm();\n    form.parse(req, async (err, fields, files)=>{\n        if (err) {\n            res.status(500).json({\n                error: \"Error parsing the form data\"\n            });\n            return;\n        }\n        // Your form data will be available in fields\n        console.log(fields);\n        // You can send a response back to the client\n        res.status(200).json({\n            message: \"Success\"\n        });\n    });\n}\n//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiKHJzYykvLi9hcHAvYXBpL2FkZC1tdXNpYy9yb3V0ZS50cyIsIm1hcHBpbmdzIjoiOzs7Ozs7QUFBQSx5QkFBeUI7QUFHVTtBQUU1QixNQUFNQyxTQUFTO0lBQ3BCQyxLQUFLO1FBQ0hDLFlBQVk7SUFDZDtBQUNGLEVBQUM7QUFFYyxlQUFlQyxRQUM1QkMsR0FBbUIsRUFDbkJDLEdBQW9CO0lBRXBCLE1BQU1DLE9BQU8sSUFBSVAsK0RBQXVCO0lBRXhDTyxLQUFLRSxLQUFLLENBQUNKLEtBQUssT0FBT0ssS0FBS0MsUUFBUUM7UUFDbEMsSUFBSUYsS0FBSztZQUNQSixJQUFJTyxNQUFNLENBQUMsS0FBS0MsSUFBSSxDQUFDO2dCQUFFQyxPQUFPO1lBQThCO1lBQzVEO1FBQ0Y7UUFFQSw2Q0FBNkM7UUFDN0NDLFFBQVFDLEdBQUcsQ0FBQ047UUFFWiw2Q0FBNkM7UUFDN0NMLElBQUlPLE1BQU0sQ0FBQyxLQUFLQyxJQUFJLENBQUM7WUFBRUksU0FBUztRQUFVO0lBQzVDO0FBQ0YiLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly9tdXNpYy1wbGF5ZXItYXBwLy4vYXBwL2FwaS9hZGQtbXVzaWMvcm91dGUudHM/NzRiNiJdLCJzb3VyY2VzQ29udGVudCI6WyIvLyBwYWdlcy9hcGkvYWRkLW11c2ljLnRzXHJcblxyXG5pbXBvcnQgdHlwZSB7IE5leHRBcGlSZXF1ZXN0LCBOZXh0QXBpUmVzcG9uc2UgfSBmcm9tICduZXh0J1xyXG5pbXBvcnQgZm9ybWlkYWJsZSBmcm9tICdmb3JtaWRhYmxlJ1xyXG5cclxuZXhwb3J0IGNvbnN0IGNvbmZpZyA9IHtcclxuICBhcGk6IHtcclxuICAgIGJvZHlQYXJzZXI6IGZhbHNlLFxyXG4gIH0sXHJcbn1cclxuXHJcbmV4cG9ydCBkZWZhdWx0IGFzeW5jIGZ1bmN0aW9uIGhhbmRsZXIoXHJcbiAgcmVxOiBOZXh0QXBpUmVxdWVzdCxcclxuICByZXM6IE5leHRBcGlSZXNwb25zZVxyXG4pIHtcclxuICBjb25zdCBmb3JtID0gbmV3IGZvcm1pZGFibGUuSW5jb21pbmdGb3JtKClcclxuXHJcbiAgZm9ybS5wYXJzZShyZXEsIGFzeW5jIChlcnIsIGZpZWxkcywgZmlsZXMpID0+IHtcclxuICAgIGlmIChlcnIpIHtcclxuICAgICAgcmVzLnN0YXR1cyg1MDApLmpzb24oeyBlcnJvcjogJ0Vycm9yIHBhcnNpbmcgdGhlIGZvcm0gZGF0YScgfSlcclxuICAgICAgcmV0dXJuXHJcbiAgICB9XHJcblxyXG4gICAgLy8gWW91ciBmb3JtIGRhdGEgd2lsbCBiZSBhdmFpbGFibGUgaW4gZmllbGRzXHJcbiAgICBjb25zb2xlLmxvZyhmaWVsZHMpXHJcblxyXG4gICAgLy8gWW91IGNhbiBzZW5kIGEgcmVzcG9uc2UgYmFjayB0byB0aGUgY2xpZW50XHJcbiAgICByZXMuc3RhdHVzKDIwMCkuanNvbih7IG1lc3NhZ2U6ICdTdWNjZXNzJyB9KVxyXG4gIH0pXHJcbn1cclxuIl0sIm5hbWVzIjpbImZvcm1pZGFibGUiLCJjb25maWciLCJhcGkiLCJib2R5UGFyc2VyIiwiaGFuZGxlciIsInJlcSIsInJlcyIsImZvcm0iLCJJbmNvbWluZ0Zvcm0iLCJwYXJzZSIsImVyciIsImZpZWxkcyIsImZpbGVzIiwic3RhdHVzIiwianNvbiIsImVycm9yIiwiY29uc29sZSIsImxvZyIsIm1lc3NhZ2UiXSwic291cmNlUm9vdCI6IiJ9\n//# sourceURL=webpack-internal:///(rsc)/./app/api/add-music/route.ts\n");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   POST: () => (/* binding */ POST)\n/* harmony export */ });\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"(rsc)/./node_modules/next/dist/server/future/route-modules/app-page/vendored/rsc/react.js\");\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var next_navigation__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! next/navigation */ \"(rsc)/./node_modules/next/navigation.js\");\n/* harmony import */ var next_navigation__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_navigation__WEBPACK_IMPORTED_MODULE_1__);\n/* harmony import */ var _app_auth__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @/app/auth */ \"(rsc)/./app/auth.ts\");\n/* harmony import */ var _db_queries_userQueries__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @/db/queries/userQueries */ \"(rsc)/./db/queries/userQueries.ts\");\n/* harmony import */ var _db_queries_musicQueries__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @/db/queries/musicQueries */ \"(rsc)/./db/queries/musicQueries.ts\");\n\n\n\n\n\nasync function POST(request) {\n    const session = await (0,_app_auth__WEBPACK_IMPORTED_MODULE_2__.auth)();\n    if (!session?.user) {\n        return (0,next_navigation__WEBPACK_IMPORTED_MODULE_1__.redirect)(\"/api/auth/signin?callbackUrl=/profile\");\n    }\n    const user = session?.user;\n    let userFromDb;\n    let email = \"\";\n    if (user?.email) {\n        userFromDb = await (0,_db_queries_userQueries__WEBPACK_IMPORTED_MODULE_3__.getUserByEmail)(user.email);\n        email = user.email;\n    }\n    if (!userFromDb) {\n        throw new Error(\"User not found in database\");\n    }\n    var jsonReq = await request.json();\n    let music = {};\n    music.userId = userFromDb?.id;\n    music.url = jsonReq.url;\n    music.artist = jsonReq.artist;\n    music.title = jsonReq.title;\n    await (0,_db_queries_musicQueries__WEBPACK_IMPORTED_MODULE_4__.createMusic)(music, email);\n    return new Response(\"ok\");\n}\n//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiKHJzYykvLi9hcHAvYXBpL2FkZC1tdXNpYy9yb3V0ZS50cyIsIm1hcHBpbmdzIjoiOzs7Ozs7Ozs7OztBQUF5QjtBQUNpQjtBQUNUO0FBRTRDO0FBQ3RCO0FBRWhELGVBQWVLLEtBQUtDLE9BQWdCO0lBRXpDLE1BQU1DLFVBQVUsTUFBTUwsK0NBQUlBO0lBRTFCLElBQUksQ0FBQ0ssU0FBU0MsTUFBTTtRQUNoQixPQUFPUCx5REFBUUEsQ0FBQztJQUNwQjtJQUVBLE1BQU1PLE9BQU9ELFNBQVNDO0lBRXRCLElBQUlDO0lBQ0osSUFBSUMsUUFBYTtJQUNqQixJQUFJRixNQUFNRSxPQUFPO1FBQ2ZELGFBQWEsTUFBTU4sdUVBQWNBLENBQUNLLEtBQUtFLEtBQUs7UUFDNUNBLFFBQVFGLEtBQUtFLEtBQUs7SUFDcEI7SUFFQSxJQUFJLENBQUNELFlBQVk7UUFDZixNQUFNLElBQUlFLE1BQU07SUFDbEI7SUFFQSxJQUFJQyxVQUFVLE1BQU1OLFFBQVFPLElBQUk7SUFFaEMsSUFBSUMsUUFBUSxDQUFDO0lBQ2JBLE1BQU1DLE1BQU0sR0FBR04sWUFBWU87SUFDM0JGLE1BQU1HLEdBQUcsR0FBR0wsUUFBUUssR0FBRztJQUN2QkgsTUFBTUksTUFBTSxHQUFHTixRQUFRTSxNQUFNO0lBQzdCSixNQUFNSyxLQUFLLEdBQUdQLFFBQVFPLEtBQUs7SUFFM0IsTUFBTWYscUVBQVdBLENBQUNVLE9BQU1KO0lBRXhCLE9BQU8sSUFBSVUsU0FBUztBQUN0QiIsInNvdXJjZXMiOlsid2VicGFjazovL211c2ljLXBsYXllci1hcHAvLi9hcHAvYXBpL2FkZC1tdXNpYy9yb3V0ZS50cz83NGI2Il0sInNvdXJjZXNDb250ZW50IjpbImltcG9ydCBSZWFjdCBmcm9tICdyZWFjdCdcclxuaW1wb3J0IHsgcmVkaXJlY3QgfSBmcm9tIFwibmV4dC9uYXZpZ2F0aW9uXCJcclxuaW1wb3J0IHsgYXV0aCB9IGZyb20gJ0AvYXBwL2F1dGgnXHJcbmltcG9ydCB7IE11c2ljIH0gZnJvbSBcIkAvbGliL3R5cGVzXCJcclxuaW1wb3J0IHsgZ2V0VXNlckJ5RW1haWwsIGdldFVzZXJNdXNpY3NDb3VudCB9IGZyb20gJ0AvZGIvcXVlcmllcy91c2VyUXVlcmllcydcclxuaW1wb3J0IHsgY3JlYXRlTXVzaWMgfSBmcm9tICdAL2RiL3F1ZXJpZXMvbXVzaWNRdWVyaWVzJ1xyXG5cclxuZXhwb3J0IGFzeW5jIGZ1bmN0aW9uIFBPU1QocmVxdWVzdDogUmVxdWVzdCkge1xyXG5cclxuICBjb25zdCBzZXNzaW9uID0gYXdhaXQgYXV0aCgpO1xyXG5cclxuICBpZiAoIXNlc3Npb24/LnVzZXIpIHtcclxuICAgICAgcmV0dXJuIHJlZGlyZWN0KFwiL2FwaS9hdXRoL3NpZ25pbj9jYWxsYmFja1VybD0vcHJvZmlsZVwiKTtcclxuICB9XHJcblxyXG4gIGNvbnN0IHVzZXIgPSBzZXNzaW9uPy51c2VyO1xyXG5cclxuICBsZXQgdXNlckZyb21EYjtcclxuICBsZXQgZW1haWw6c3RyaW5nPVwiXCI7XHJcbiAgaWYgKHVzZXI/LmVtYWlsKSB7XHJcbiAgICB1c2VyRnJvbURiID0gYXdhaXQgZ2V0VXNlckJ5RW1haWwodXNlci5lbWFpbCk7XHJcbiAgICBlbWFpbCA9IHVzZXIuZW1haWw7XHJcbiAgfVxyXG5cclxuICBpZiAoIXVzZXJGcm9tRGIpIHtcclxuICAgIHRocm93IG5ldyBFcnJvcihcIlVzZXIgbm90IGZvdW5kIGluIGRhdGFiYXNlXCIpO1xyXG4gIH1cclxuXHJcbiAgdmFyIGpzb25SZXEgPSBhd2FpdCByZXF1ZXN0Lmpzb24oKTtcclxuXHJcbiAgbGV0IG11c2ljID0ge30gYXMgTXVzaWM7XHJcbiAgbXVzaWMudXNlcklkID0gdXNlckZyb21EYj8uaWQ7XHJcbiAgbXVzaWMudXJsID0ganNvblJlcS51cmw7XHJcbiAgbXVzaWMuYXJ0aXN0ID0ganNvblJlcS5hcnRpc3Q7XHJcbiAgbXVzaWMudGl0bGUgPSBqc29uUmVxLnRpdGxlO1xyXG5cclxuICBhd2FpdCBjcmVhdGVNdXNpYyhtdXNpYyxlbWFpbCk7XHJcblxyXG4gIHJldHVybiBuZXcgUmVzcG9uc2UoXCJva1wiKTtcclxufVxyXG5cclxuXHJcbiJdLCJuYW1lcyI6WyJSZWFjdCIsInJlZGlyZWN0IiwiYXV0aCIsImdldFVzZXJCeUVtYWlsIiwiY3JlYXRlTXVzaWMiLCJQT1NUIiwicmVxdWVzdCIsInNlc3Npb24iLCJ1c2VyIiwidXNlckZyb21EYiIsImVtYWlsIiwiRXJyb3IiLCJqc29uUmVxIiwianNvbiIsIm11c2ljIiwidXNlcklkIiwiaWQiLCJ1cmwiLCJhcnRpc3QiLCJ0aXRsZSIsIlJlc3BvbnNlIl0sInNvdXJjZVJvb3QiOiIifQ==\n//# sourceURL=webpack-internal:///(rsc)/./app/api/add-music/route.ts\n");
+
+/***/ }),
+
+/***/ "(rsc)/./app/auth.ts":
+/*!*********************!*\
+  !*** ./app/auth.ts ***!
+  \*********************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   auth: () => (/* binding */ auth),\n/* harmony export */   handlers: () => (/* binding */ handlers)\n/* harmony export */ });\n/* harmony import */ var next_auth__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! next-auth */ \"(rsc)/./node_modules/next-auth/index.js\");\n/* harmony import */ var next_auth_providers_github__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! next-auth/providers/github */ \"(rsc)/./node_modules/next-auth/providers/github.js\");\n/* harmony import */ var _auth_drizzle_adapter__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @auth/drizzle-adapter */ \"(rsc)/./node_modules/@auth/drizzle-adapter/index.js\");\n/* harmony import */ var _db__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @/db */ \"(rsc)/./db/index.ts\");\n\n\n\n\nconst { handlers, auth } = (0,next_auth__WEBPACK_IMPORTED_MODULE_0__[\"default\"])({\n    providers: [\n        next_auth_providers_github__WEBPACK_IMPORTED_MODULE_1__[\"default\"]\n    ],\n    adapter: (0,_auth_drizzle_adapter__WEBPACK_IMPORTED_MODULE_2__.DrizzleAdapter)(_db__WEBPACK_IMPORTED_MODULE_3__.db)\n});\n//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiKHJzYykvLi9hcHAvYXV0aC50cyIsIm1hcHBpbmdzIjoiOzs7Ozs7Ozs7QUFBZ0M7QUFDZTtBQUNPO0FBQzdCO0FBRWxCLE1BQU0sRUFBRUksUUFBUSxFQUFFQyxJQUFJLEVBQUUsR0FBR0wscURBQVFBLENBQUM7SUFBRU0sV0FBVztRQUFDTCxrRUFBTUE7S0FBQztJQUFFTSxTQUFTTCxxRUFBY0EsQ0FBQ0MsbUNBQUVBO0FBQUUsR0FBRSIsInNvdXJjZXMiOlsid2VicGFjazovL211c2ljLXBsYXllci1hcHAvLi9hcHAvYXV0aC50cz83NjM4Il0sInNvdXJjZXNDb250ZW50IjpbImltcG9ydCBOZXh0QXV0aCBmcm9tIFwibmV4dC1hdXRoXCJcclxuaW1wb3J0IEdpdEh1YiBmcm9tIFwibmV4dC1hdXRoL3Byb3ZpZGVycy9naXRodWJcIlxyXG5pbXBvcnQgeyBEcml6emxlQWRhcHRlciB9IGZyb20gXCJAYXV0aC9kcml6emxlLWFkYXB0ZXJcIlxyXG5pbXBvcnQgeyBkYiB9IGZyb20gXCJAL2RiXCJcclxuXHJcbmV4cG9ydCBjb25zdCB7IGhhbmRsZXJzLCBhdXRoIH0gPSBOZXh0QXV0aCh7IHByb3ZpZGVyczogW0dpdEh1Yl0sIGFkYXB0ZXI6IERyaXp6bGVBZGFwdGVyKGRiKSB9KSJdLCJuYW1lcyI6WyJOZXh0QXV0aCIsIkdpdEh1YiIsIkRyaXp6bGVBZGFwdGVyIiwiZGIiLCJoYW5kbGVycyIsImF1dGgiLCJwcm92aWRlcnMiLCJhZGFwdGVyIl0sInNvdXJjZVJvb3QiOiIifQ==\n//# sourceURL=webpack-internal:///(rsc)/./app/auth.ts\n");
+
+/***/ }),
+
+/***/ "(rsc)/./db/index.ts":
+/*!*********************!*\
+  !*** ./db/index.ts ***!
+  \*********************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   db: () => (/* binding */ db)\n/* harmony export */ });\n/* harmony import */ var _neondatabase_serverless__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @neondatabase/serverless */ \"(rsc)/./node_modules/@neondatabase/serverless/index.mjs\");\n/* harmony import */ var drizzle_orm_neon_http__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! drizzle-orm/neon-http */ \"(rsc)/./node_modules/drizzle-orm/neon-http/driver.js\");\n\n\nconst sql = (0,_neondatabase_serverless__WEBPACK_IMPORTED_MODULE_0__.neon)(process.env.DATABASE_URL);\nconst db = (0,drizzle_orm_neon_http__WEBPACK_IMPORTED_MODULE_1__.drizzle)(sql);\n//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiKHJzYykvLi9kYi9pbmRleC50cyIsIm1hcHBpbmdzIjoiOzs7Ozs7QUFBK0M7QUFDQTtBQUcvQyxNQUFNRSxNQUFNRiw4REFBSUEsQ0FBQ0csUUFBUUMsR0FBRyxDQUFDQyxZQUFZO0FBQ2xDLE1BQU1DLEtBQUtMLDhEQUFPQSxDQUFDQyxLQUFLIiwic291cmNlcyI6WyJ3ZWJwYWNrOi8vbXVzaWMtcGxheWVyLWFwcC8uL2RiL2luZGV4LnRzP2JhNzEiXSwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IHsgbmVvbiB9IGZyb20gJ0BuZW9uZGF0YWJhc2Uvc2VydmVybGVzcydcclxuaW1wb3J0IHsgZHJpenpsZSB9IGZyb20gJ2RyaXp6bGUtb3JtL25lb24taHR0cCdcclxuXHJcblxyXG5jb25zdCBzcWwgPSBuZW9uKHByb2Nlc3MuZW52LkRBVEFCQVNFX1VSTCEpO1xyXG5leHBvcnQgY29uc3QgZGIgPSBkcml6emxlKHNxbCk7XHJcbiJdLCJuYW1lcyI6WyJuZW9uIiwiZHJpenpsZSIsInNxbCIsInByb2Nlc3MiLCJlbnYiLCJEQVRBQkFTRV9VUkwiLCJkYiJdLCJzb3VyY2VSb290IjoiIn0=\n//# sourceURL=webpack-internal:///(rsc)/./db/index.ts\n");
+
+/***/ }),
+
+/***/ "(rsc)/./db/queries/musicQueries.ts":
+/*!************************************!*\
+  !*** ./db/queries/musicQueries.ts ***!
+  \************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   createMusic: () => (/* binding */ createMusic),\n/* harmony export */   getMusicsByUserId: () => (/* binding */ getMusicsByUserId)\n/* harmony export */ });\n/* harmony import */ var _db__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @/db */ \"(rsc)/./db/index.ts\");\n/* harmony import */ var _db_queries_userQueries__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @/db/queries/userQueries */ \"(rsc)/./db/queries/userQueries.ts\");\n/* harmony import */ var _schema_musics__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../schema/musics */ \"(rsc)/./db/schema/musics.ts\");\n/* harmony import */ var drizzle_orm__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! drizzle-orm */ \"(rsc)/./node_modules/drizzle-orm/sql/expressions/conditions.js\");\n\n\n\n\nasync function createMusic(music, email) {\n    const user = await (0,_db_queries_userQueries__WEBPACK_IMPORTED_MODULE_1__.getUserByEmail)(email);\n    music.userId = user.id;\n    await _db__WEBPACK_IMPORTED_MODULE_0__.db.insert(_schema_musics__WEBPACK_IMPORTED_MODULE_2__.musics).values(music) // create a new music\n    ;\n}\nasync function getMusicsByUserId(email) {\n    const user = await (0,_db_queries_userQueries__WEBPACK_IMPORTED_MODULE_1__.getUserByEmail)(email);\n    return await _db__WEBPACK_IMPORTED_MODULE_0__.db.select().from(_schema_musics__WEBPACK_IMPORTED_MODULE_2__.musics).where((0,drizzle_orm__WEBPACK_IMPORTED_MODULE_3__.eq)(_schema_musics__WEBPACK_IMPORTED_MODULE_2__.musics.userId, user.id));\n}\n//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiKHJzYykvLi9kYi9xdWVyaWVzL211c2ljUXVlcmllcy50cyIsIm1hcHBpbmdzIjoiOzs7Ozs7Ozs7QUFBeUI7QUFDZ0M7QUFFaEI7QUFDVDtBQUd6QixlQUFlSSxZQUFZQyxLQUFZLEVBQUNDLEtBQVk7SUFDdkQsTUFBTUMsT0FBTyxNQUFNTix1RUFBY0EsQ0FBQ0s7SUFFbENELE1BQU1HLE1BQU0sR0FBR0QsS0FBS0UsRUFBRTtJQUV0QixNQUFNVCxtQ0FBRUEsQ0FBQ1UsTUFBTSxDQUFDUixrREFBTUEsRUFBRVMsTUFBTSxDQUFDTixPQUFPLHFCQUFxQjs7QUFDL0Q7QUFFTyxlQUFlTyxrQkFBa0JOLEtBQWE7SUFDakQsTUFBTUMsT0FBTyxNQUFNTix1RUFBY0EsQ0FBQ0s7SUFDbEMsT0FBTyxNQUFNTixtQ0FBRUEsQ0FBQ2EsTUFBTSxHQUFHQyxJQUFJLENBQUNaLGtEQUFNQSxFQUFFYSxLQUFLLENBQUNaLCtDQUFFQSxDQUFDRCxrREFBTUEsQ0FBQ00sTUFBTSxFQUFFRCxLQUFLRSxFQUFFO0FBQ3pFIiwic291cmNlcyI6WyJ3ZWJwYWNrOi8vbXVzaWMtcGxheWVyLWFwcC8uL2RiL3F1ZXJpZXMvbXVzaWNRdWVyaWVzLnRzPzIyYjgiXSwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IHsgZGIgfSBmcm9tICdAL2RiJ1xyXG5pbXBvcnQgeyBnZXRVc2VyQnlFbWFpbCB9IGZyb20gJ0AvZGIvcXVlcmllcy91c2VyUXVlcmllcydcclxuaW1wb3J0IHsgTXVzaWMgfSBmcm9tICdAL2xpYi90eXBlcydcclxuaW1wb3J0IHsgbXVzaWNzIH0gZnJvbSAnLi4vc2NoZW1hL211c2ljcydcclxuaW1wb3J0IHsgZXEgfSBmcm9tIFwiZHJpenpsZS1vcm1cIlxyXG5cclxuXHJcbmV4cG9ydCBhc3luYyBmdW5jdGlvbiBjcmVhdGVNdXNpYyhtdXNpYzogTXVzaWMsZW1haWw6c3RyaW5nKSB7XHJcbiAgICBjb25zdCB1c2VyID0gYXdhaXQgZ2V0VXNlckJ5RW1haWwoZW1haWwpO1xyXG5cclxuICAgIG11c2ljLnVzZXJJZCA9IHVzZXIuaWQ7XHJcblxyXG4gICAgYXdhaXQgZGIuaW5zZXJ0KG11c2ljcykudmFsdWVzKG11c2ljKSAvLyBjcmVhdGUgYSBuZXcgbXVzaWNcclxufVxyXG5cclxuZXhwb3J0IGFzeW5jIGZ1bmN0aW9uIGdldE11c2ljc0J5VXNlcklkKGVtYWlsOiBzdHJpbmcpIHtcclxuICAgIGNvbnN0IHVzZXIgPSBhd2FpdCBnZXRVc2VyQnlFbWFpbChlbWFpbCk7XHJcbiAgICByZXR1cm4gYXdhaXQgZGIuc2VsZWN0KCkuZnJvbShtdXNpY3MpLndoZXJlKGVxKG11c2ljcy51c2VySWQsIHVzZXIuaWQpKTtcclxufVxyXG5cclxuXHJcbiJdLCJuYW1lcyI6WyJkYiIsImdldFVzZXJCeUVtYWlsIiwibXVzaWNzIiwiZXEiLCJjcmVhdGVNdXNpYyIsIm11c2ljIiwiZW1haWwiLCJ1c2VyIiwidXNlcklkIiwiaWQiLCJpbnNlcnQiLCJ2YWx1ZXMiLCJnZXRNdXNpY3NCeVVzZXJJZCIsInNlbGVjdCIsImZyb20iLCJ3aGVyZSJdLCJzb3VyY2VSb290IjoiIn0=\n//# sourceURL=webpack-internal:///(rsc)/./db/queries/musicQueries.ts\n");
+
+/***/ }),
+
+/***/ "(rsc)/./db/queries/userQueries.ts":
+/*!***********************************!*\
+  !*** ./db/queries/userQueries.ts ***!
+  \***********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   getUserByEmail: () => (/* binding */ getUserByEmail),\n/* harmony export */   getUserMusicsCount: () => (/* binding */ getUserMusicsCount)\n/* harmony export */ });\n/* harmony import */ var _db__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @/db */ \"(rsc)/./db/index.ts\");\n/* harmony import */ var drizzle_orm__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! drizzle-orm */ \"(rsc)/./node_modules/drizzle-orm/sql/expressions/conditions.js\");\n/* harmony import */ var drizzle_orm__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! drizzle-orm */ \"(rsc)/./node_modules/drizzle-orm/sql/sql.js\");\n/* harmony import */ var _schema_users__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../schema/users */ \"(rsc)/./db/schema/users.ts\");\n/* harmony import */ var _schema_musics__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../schema/musics */ \"(rsc)/./db/schema/musics.ts\");\n\n\n\n\nasync function getUserByEmail(email) {\n    const user = await _db__WEBPACK_IMPORTED_MODULE_0__.db.select().from(_schema_users__WEBPACK_IMPORTED_MODULE_1__.users).where((0,drizzle_orm__WEBPACK_IMPORTED_MODULE_3__.eq)(_schema_users__WEBPACK_IMPORTED_MODULE_1__.users.email, email)).then((result)=>result[0]);\n    return user;\n}\nasync function getUserMusicsCount(email) {\n    const user = await getUserByEmail(email);\n    const result = await _db__WEBPACK_IMPORTED_MODULE_0__.db.select({\n        count: drizzle_orm__WEBPACK_IMPORTED_MODULE_4__.sql`COUNT (*)`\n    }).from(_schema_musics__WEBPACK_IMPORTED_MODULE_2__.musics).where((0,drizzle_orm__WEBPACK_IMPORTED_MODULE_3__.eq)(_schema_musics__WEBPACK_IMPORTED_MODULE_2__.musics.userId, user.id));\n    const count = result[0]?.count;\n    return count;\n}\n//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiKHJzYykvLi9kYi9xdWVyaWVzL3VzZXJRdWVyaWVzLnRzIiwibWFwcGluZ3MiOiI7Ozs7Ozs7Ozs7QUFBeUI7QUFDWTtBQUNHO0FBQ0U7QUFHbkMsZUFBZUssZUFBZUMsS0FBWTtJQUM3QyxNQUFNQyxPQUFPLE1BQU1QLG1DQUFFQSxDQUFDUSxNQUFNLEdBQUdDLElBQUksQ0FBQ04sZ0RBQUtBLEVBQUVPLEtBQUssQ0FBQ1QsK0NBQUVBLENBQUNFLGdEQUFLQSxDQUFDRyxLQUFLLEVBQUVBLFFBQVFLLElBQUksQ0FBQyxDQUFDQyxTQUFXQSxNQUFNLENBQUMsRUFBRTtJQUNuRyxPQUFPTDtBQUNYO0FBRU8sZUFBZU0sbUJBQW1CUCxLQUFhO0lBQ2xELE1BQU1DLE9BQU8sTUFBTUYsZUFBZUM7SUFDbEMsTUFBTU0sU0FBUyxNQUFNWixtQ0FBRUEsQ0FBQ1EsTUFBTSxDQUFDO1FBQUVNLE9BQU9aLDRDQUFXLENBQUMsU0FBUyxDQUFDO0lBQUMsR0FBR08sSUFBSSxDQUFDTCxrREFBTUEsRUFBRU0sS0FBSyxDQUFDVCwrQ0FBRUEsQ0FBQ0csa0RBQU1BLENBQUNXLE1BQU0sRUFBRVIsS0FBS1MsRUFBRTtJQUM5RyxNQUFNRixRQUFRRixNQUFNLENBQUMsRUFBRSxFQUFFRTtJQUN6QixPQUFPQTtBQUNYIiwic291cmNlcyI6WyJ3ZWJwYWNrOi8vbXVzaWMtcGxheWVyLWFwcC8uL2RiL3F1ZXJpZXMvdXNlclF1ZXJpZXMudHM/MzYzYyJdLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgeyBkYiB9IGZyb20gJ0AvZGInXHJcbmltcG9ydCB7IGVxICwgc3FsfSBmcm9tIFwiZHJpenpsZS1vcm1cIlxyXG5pbXBvcnQgeyB1c2VycyB9IGZyb20gJy4uL3NjaGVtYS91c2Vycyc7XHJcbmltcG9ydCB7IG11c2ljcyB9IGZyb20gJy4uL3NjaGVtYS9tdXNpY3MnO1xyXG5cclxuXHJcbmV4cG9ydCBhc3luYyBmdW5jdGlvbiBnZXRVc2VyQnlFbWFpbChlbWFpbDpzdHJpbmcpIHtcclxuICAgIGNvbnN0IHVzZXIgPSBhd2FpdCBkYi5zZWxlY3QoKS5mcm9tKHVzZXJzKS53aGVyZShlcSh1c2Vycy5lbWFpbCwgZW1haWwpKS50aGVuKChyZXN1bHQpID0+IHJlc3VsdFswXSk7XHJcbiAgICByZXR1cm4gdXNlcjtcclxufVxyXG5cclxuZXhwb3J0IGFzeW5jIGZ1bmN0aW9uIGdldFVzZXJNdXNpY3NDb3VudChlbWFpbDogc3RyaW5nKSB7XHJcbiAgICBjb25zdCB1c2VyID0gYXdhaXQgZ2V0VXNlckJ5RW1haWwoZW1haWwpO1xyXG4gICAgY29uc3QgcmVzdWx0ID0gYXdhaXQgZGIuc2VsZWN0KHsgY291bnQ6IHNxbDxudW1iZXI+YENPVU5UICgqKWAgfSkuZnJvbShtdXNpY3MpLndoZXJlKGVxKG11c2ljcy51c2VySWQsIHVzZXIuaWQpKTtcclxuICAgIGNvbnN0IGNvdW50ID0gcmVzdWx0WzBdPy5jb3VudDtcclxuICAgIHJldHVybiBjb3VudDtcclxufVxyXG5cclxuXHJcbiJdLCJuYW1lcyI6WyJkYiIsImVxIiwic3FsIiwidXNlcnMiLCJtdXNpY3MiLCJnZXRVc2VyQnlFbWFpbCIsImVtYWlsIiwidXNlciIsInNlbGVjdCIsImZyb20iLCJ3aGVyZSIsInRoZW4iLCJyZXN1bHQiLCJnZXRVc2VyTXVzaWNzQ291bnQiLCJjb3VudCIsInVzZXJJZCIsImlkIl0sInNvdXJjZVJvb3QiOiIifQ==\n//# sourceURL=webpack-internal:///(rsc)/./db/queries/userQueries.ts\n");
+
+/***/ }),
+
+/***/ "(rsc)/./db/schema/musics.ts":
+/*!*****************************!*\
+  !*** ./db/schema/musics.ts ***!
+  \*****************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   musics: () => (/* binding */ musics)\n/* harmony export */ });\n/* harmony import */ var _users__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./users */ \"(rsc)/./db/schema/users.ts\");\n/* harmony import */ var drizzle_orm_pg_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! drizzle-orm/pg-core */ \"(rsc)/./node_modules/drizzle-orm/pg-core/table.js\");\n/* harmony import */ var drizzle_orm_pg_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! drizzle-orm/pg-core */ \"(rsc)/./node_modules/drizzle-orm/pg-core/columns/serial.js\");\n/* harmony import */ var drizzle_orm_pg_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! drizzle-orm/pg-core */ \"(rsc)/./node_modules/drizzle-orm/pg-core/columns/text.js\");\n/* harmony import */ var drizzle_orm_pg_core__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! drizzle-orm/pg-core */ \"(rsc)/./node_modules/drizzle-orm/pg-core/columns/timestamp.js\");\n\n\nconst musics = (0,drizzle_orm_pg_core__WEBPACK_IMPORTED_MODULE_1__.pgTable)(\"music\", {\n    id: (0,drizzle_orm_pg_core__WEBPACK_IMPORTED_MODULE_2__.serial)(\"id\").primaryKey(),\n    userId: (0,drizzle_orm_pg_core__WEBPACK_IMPORTED_MODULE_3__.text)(\"userId\").notNull().references(()=>_users__WEBPACK_IMPORTED_MODULE_0__.users.id),\n    artist: (0,drizzle_orm_pg_core__WEBPACK_IMPORTED_MODULE_3__.text)(\"artist\").notNull().default(\"unknown\"),\n    title: (0,drizzle_orm_pg_core__WEBPACK_IMPORTED_MODULE_3__.text)(\"title\").notNull(),\n    url: (0,drizzle_orm_pg_core__WEBPACK_IMPORTED_MODULE_3__.text)(\"url\").notNull(),\n    createdAt: (0,drizzle_orm_pg_core__WEBPACK_IMPORTED_MODULE_4__.timestamp)(\"createdAt\", {\n        withTimezone: true\n    }).notNull().defaultNow()\n});\n//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiKHJzYykvLi9kYi9zY2hlbWEvbXVzaWNzLnRzIiwibWFwcGluZ3MiOiI7Ozs7Ozs7OztBQUErQjtBQVFIO0FBRXJCLE1BQU1LLFNBQVNILDREQUFPQSxDQUFDLFNBQVM7SUFDbkNJLElBQUlGLDJEQUFNQSxDQUFDLE1BQU1HLFVBQVU7SUFDM0JDLFFBQVFMLHlEQUFJQSxDQUFDLFVBQVVNLE9BQU8sR0FBR0MsVUFBVSxDQUFDLElBQU1WLHlDQUFLQSxDQUFDTSxFQUFFO0lBQzFESyxRQUFRUix5REFBSUEsQ0FBQyxVQUFVTSxPQUFPLEdBQUdHLE9BQU8sQ0FBQztJQUN6Q0MsT0FBT1YseURBQUlBLENBQUMsU0FBU00sT0FBTztJQUM1QkssS0FBS1gseURBQUlBLENBQUMsT0FBT00sT0FBTztJQUN4Qk0sV0FBV2QsOERBQVNBLENBQUMsYUFBYTtRQUFFZSxjQUFjO0lBQUssR0FBR1AsT0FBTyxHQUFHUSxVQUFVO0FBQ2xGLEdBQUUiLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly9tdXNpYy1wbGF5ZXItYXBwLy4vZGIvc2NoZW1hL211c2ljcy50cz8yMDdhIl0sInNvdXJjZXNDb250ZW50IjpbImltcG9ydCB7IHVzZXJzIH0gZnJvbSBcIi4vdXNlcnNcIlxyXG5pbXBvcnQge1xyXG4gICAgdGltZXN0YW1wLFxyXG4gICAgcGdUYWJsZSxcclxuICAgIHRleHQsXHJcbiAgICBwcmltYXJ5S2V5LFxyXG4gICAgaW50ZWdlcixcclxuICAgIHNlcmlhbFxyXG59IGZyb20gXCJkcml6emxlLW9ybS9wZy1jb3JlXCJcclxuXHJcbmV4cG9ydCBjb25zdCBtdXNpY3MgPSBwZ1RhYmxlKFwibXVzaWNcIiwge1xyXG4gICAgaWQ6IHNlcmlhbChcImlkXCIpLnByaW1hcnlLZXkoKSxcclxuICAgIHVzZXJJZDogdGV4dChcInVzZXJJZFwiKS5ub3ROdWxsKCkucmVmZXJlbmNlcygoKSA9PiB1c2Vycy5pZCksXHJcbiAgICBhcnRpc3Q6IHRleHQoXCJhcnRpc3RcIikubm90TnVsbCgpLmRlZmF1bHQoXCJ1bmtub3duXCIpLFxyXG4gICAgdGl0bGU6IHRleHQoXCJ0aXRsZVwiKS5ub3ROdWxsKCksXHJcbiAgICB1cmw6IHRleHQoXCJ1cmxcIikubm90TnVsbCgpLFxyXG4gICAgY3JlYXRlZEF0OiB0aW1lc3RhbXAoXCJjcmVhdGVkQXRcIiwgeyB3aXRoVGltZXpvbmU6IHRydWUgfSkubm90TnVsbCgpLmRlZmF1bHROb3coKSxcclxufSkiXSwibmFtZXMiOlsidXNlcnMiLCJ0aW1lc3RhbXAiLCJwZ1RhYmxlIiwidGV4dCIsInNlcmlhbCIsIm11c2ljcyIsImlkIiwicHJpbWFyeUtleSIsInVzZXJJZCIsIm5vdE51bGwiLCJyZWZlcmVuY2VzIiwiYXJ0aXN0IiwiZGVmYXVsdCIsInRpdGxlIiwidXJsIiwiY3JlYXRlZEF0Iiwid2l0aFRpbWV6b25lIiwiZGVmYXVsdE5vdyJdLCJzb3VyY2VSb290IjoiIn0=\n//# sourceURL=webpack-internal:///(rsc)/./db/schema/musics.ts\n");
+
+/***/ }),
+
+/***/ "(rsc)/./db/schema/users.ts":
+/*!****************************!*\
+  !*** ./db/schema/users.ts ***!
+  \****************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   accounts: () => (/* binding */ accounts),\n/* harmony export */   sessions: () => (/* binding */ sessions),\n/* harmony export */   users: () => (/* binding */ users),\n/* harmony export */   verificationTokens: () => (/* binding */ verificationTokens)\n/* harmony export */ });\n/* harmony import */ var drizzle_orm_pg_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! drizzle-orm/pg-core */ \"(rsc)/./node_modules/drizzle-orm/pg-core/table.js\");\n/* harmony import */ var drizzle_orm_pg_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! drizzle-orm/pg-core */ \"(rsc)/./node_modules/drizzle-orm/pg-core/columns/text.js\");\n/* harmony import */ var drizzle_orm_pg_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! drizzle-orm/pg-core */ \"(rsc)/./node_modules/drizzle-orm/pg-core/columns/timestamp.js\");\n/* harmony import */ var drizzle_orm_pg_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! drizzle-orm/pg-core */ \"(rsc)/./node_modules/drizzle-orm/pg-core/columns/integer.js\");\n/* harmony import */ var drizzle_orm_pg_core__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! drizzle-orm/pg-core */ \"(rsc)/./node_modules/drizzle-orm/pg-core/primary-keys.js\");\n\nconst users = (0,drizzle_orm_pg_core__WEBPACK_IMPORTED_MODULE_0__.pgTable)(\"user\", {\n    id: (0,drizzle_orm_pg_core__WEBPACK_IMPORTED_MODULE_1__.text)(\"id\").notNull().primaryKey(),\n    name: (0,drizzle_orm_pg_core__WEBPACK_IMPORTED_MODULE_1__.text)(\"name\"),\n    email: (0,drizzle_orm_pg_core__WEBPACK_IMPORTED_MODULE_1__.text)(\"email\").notNull(),\n    emailVerified: (0,drizzle_orm_pg_core__WEBPACK_IMPORTED_MODULE_2__.timestamp)(\"emailVerified\", {\n        mode: \"date\"\n    }),\n    image: (0,drizzle_orm_pg_core__WEBPACK_IMPORTED_MODULE_1__.text)(\"image\")\n});\nconst accounts = (0,drizzle_orm_pg_core__WEBPACK_IMPORTED_MODULE_0__.pgTable)(\"account\", {\n    userId: (0,drizzle_orm_pg_core__WEBPACK_IMPORTED_MODULE_1__.text)(\"userId\").notNull().references(()=>users.id, {\n        onDelete: \"cascade\"\n    }),\n    type: (0,drizzle_orm_pg_core__WEBPACK_IMPORTED_MODULE_1__.text)(\"type\").$type().notNull(),\n    provider: (0,drizzle_orm_pg_core__WEBPACK_IMPORTED_MODULE_1__.text)(\"provider\").notNull(),\n    providerAccountId: (0,drizzle_orm_pg_core__WEBPACK_IMPORTED_MODULE_1__.text)(\"providerAccountId\").notNull(),\n    refresh_token: (0,drizzle_orm_pg_core__WEBPACK_IMPORTED_MODULE_1__.text)(\"refresh_token\"),\n    access_token: (0,drizzle_orm_pg_core__WEBPACK_IMPORTED_MODULE_1__.text)(\"access_token\"),\n    expires_at: (0,drizzle_orm_pg_core__WEBPACK_IMPORTED_MODULE_3__.integer)(\"expires_at\"),\n    token_type: (0,drizzle_orm_pg_core__WEBPACK_IMPORTED_MODULE_1__.text)(\"token_type\"),\n    scope: (0,drizzle_orm_pg_core__WEBPACK_IMPORTED_MODULE_1__.text)(\"scope\"),\n    id_token: (0,drizzle_orm_pg_core__WEBPACK_IMPORTED_MODULE_1__.text)(\"id_token\"),\n    session_state: (0,drizzle_orm_pg_core__WEBPACK_IMPORTED_MODULE_1__.text)(\"session_state\")\n}, (account)=>({\n        compoundKey: (0,drizzle_orm_pg_core__WEBPACK_IMPORTED_MODULE_4__.primaryKey)(account.provider, account.providerAccountId)\n    }));\nconst sessions = (0,drizzle_orm_pg_core__WEBPACK_IMPORTED_MODULE_0__.pgTable)(\"session\", {\n    sessionToken: (0,drizzle_orm_pg_core__WEBPACK_IMPORTED_MODULE_1__.text)(\"sessionToken\").notNull().primaryKey(),\n    userId: (0,drizzle_orm_pg_core__WEBPACK_IMPORTED_MODULE_1__.text)(\"userId\").notNull().references(()=>users.id, {\n        onDelete: \"cascade\"\n    }),\n    expires: (0,drizzle_orm_pg_core__WEBPACK_IMPORTED_MODULE_2__.timestamp)(\"expires\", {\n        mode: \"date\"\n    }).notNull()\n});\nconst verificationTokens = (0,drizzle_orm_pg_core__WEBPACK_IMPORTED_MODULE_0__.pgTable)(\"verificationToken\", {\n    identifier: (0,drizzle_orm_pg_core__WEBPACK_IMPORTED_MODULE_1__.text)(\"identifier\").notNull(),\n    token: (0,drizzle_orm_pg_core__WEBPACK_IMPORTED_MODULE_1__.text)(\"token\").notNull(),\n    expires: (0,drizzle_orm_pg_core__WEBPACK_IMPORTED_MODULE_2__.timestamp)(\"expires\", {\n        mode: \"date\"\n    }).notNull()\n}, (vt)=>({\n        compoundKey: (0,drizzle_orm_pg_core__WEBPACK_IMPORTED_MODULE_4__.primaryKey)(vt.identifier, vt.token)\n    }));\n//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiKHJzYykvLi9kYi9zY2hlbWEvdXNlcnMudHMiLCJtYXBwaW5ncyI6Ijs7Ozs7Ozs7Ozs7O0FBTThCO0FBR3JCLE1BQU1LLFFBQVFKLDREQUFPQSxDQUFDLFFBQVE7SUFDcENLLElBQUlKLHlEQUFJQSxDQUFDLE1BQU1LLE9BQU8sR0FBR0osVUFBVTtJQUNuQ0ssTUFBTU4seURBQUlBLENBQUM7SUFDWE8sT0FBT1AseURBQUlBLENBQUMsU0FBU0ssT0FBTztJQUM1QkcsZUFBZVYsOERBQVNBLENBQUMsaUJBQWlCO1FBQUVXLE1BQU07SUFBTztJQUN6REMsT0FBT1YseURBQUlBLENBQUM7QUFDYixHQUFFO0FBRUssTUFBTVcsV0FBV1osNERBQU9BLENBQy9CLFdBQ0E7SUFDRWEsUUFBUVoseURBQUlBLENBQUMsVUFDVkssT0FBTyxHQUNQUSxVQUFVLENBQUMsSUFBTVYsTUFBTUMsRUFBRSxFQUFFO1FBQUVVLFVBQVU7SUFBVTtJQUNwREMsTUFBTWYseURBQUlBLENBQUMsUUFBUWdCLEtBQUssR0FBMkJYLE9BQU87SUFDMURZLFVBQVVqQix5REFBSUEsQ0FBQyxZQUFZSyxPQUFPO0lBQ2xDYSxtQkFBbUJsQix5REFBSUEsQ0FBQyxxQkFBcUJLLE9BQU87SUFDcERjLGVBQWVuQix5REFBSUEsQ0FBQztJQUNwQm9CLGNBQWNwQix5REFBSUEsQ0FBQztJQUNuQnFCLFlBQVluQiw0REFBT0EsQ0FBQztJQUNwQm9CLFlBQVl0Qix5REFBSUEsQ0FBQztJQUNqQnVCLE9BQU92Qix5REFBSUEsQ0FBQztJQUNYd0IsVUFBVXhCLHlEQUFJQSxDQUFDO0lBQ2hCeUIsZUFBZXpCLHlEQUFJQSxDQUFDO0FBQ3RCLEdBQ0EsQ0FBQzBCLFVBQWE7UUFDWkMsYUFBYTFCLCtEQUFVQSxDQUFDeUIsUUFBUVQsUUFBUSxFQUFFUyxRQUFRUixpQkFBaUI7SUFDckUsSUFDQztBQUVNLE1BQU1VLFdBQVc3Qiw0REFBT0EsQ0FBQyxXQUFXO0lBQzFDOEIsY0FBYzdCLHlEQUFJQSxDQUFDLGdCQUFnQkssT0FBTyxHQUFHSixVQUFVO0lBQ3ZEVyxRQUFRWix5REFBSUEsQ0FBQyxVQUNWSyxPQUFPLEdBQ1BRLFVBQVUsQ0FBQyxJQUFNVixNQUFNQyxFQUFFLEVBQUU7UUFBRVUsVUFBVTtJQUFVO0lBQ3BEZ0IsU0FBU2hDLDhEQUFTQSxDQUFDLFdBQVc7UUFBRVcsTUFBTTtJQUFPLEdBQUdKLE9BQU87QUFDeEQsR0FBRTtBQUVLLE1BQU0wQixxQkFBcUJoQyw0REFBT0EsQ0FDeEMscUJBQ0E7SUFDRWlDLFlBQVloQyx5REFBSUEsQ0FBQyxjQUFjSyxPQUFPO0lBQ3RDNEIsT0FBT2pDLHlEQUFJQSxDQUFDLFNBQVNLLE9BQU87SUFDNUJ5QixTQUFTaEMsOERBQVNBLENBQUMsV0FBVztRQUFFVyxNQUFNO0lBQU8sR0FBR0osT0FBTztBQUN6RCxHQUNBLENBQUM2QixLQUFRO1FBQ1BQLGFBQWExQiwrREFBVUEsQ0FBQ2lDLEdBQUdGLFVBQVUsRUFBRUUsR0FBR0QsS0FBSztJQUNqRCxJQUNBIiwic291cmNlcyI6WyJ3ZWJwYWNrOi8vbXVzaWMtcGxheWVyLWFwcC8uL2RiL3NjaGVtYS91c2Vycy50cz84OTcxIl0sInNvdXJjZXNDb250ZW50IjpbImltcG9ydCB7XHJcbiAgICB0aW1lc3RhbXAsXHJcbiAgICBwZ1RhYmxlLFxyXG4gICAgdGV4dCxcclxuICAgIHByaW1hcnlLZXksXHJcbiAgIGludGVnZXJcclxuICB9IGZyb20gXCJkcml6emxlLW9ybS9wZy1jb3JlXCJcclxuICBpbXBvcnQgdHlwZSB7IEFkYXB0ZXJBY2NvdW50IH0gZnJvbSAnQGF1dGgvY29yZS9hZGFwdGVycydcclxuICBcclxuICBleHBvcnQgY29uc3QgdXNlcnMgPSBwZ1RhYmxlKFwidXNlclwiLCB7XHJcbiAgIGlkOiB0ZXh0KFwiaWRcIikubm90TnVsbCgpLnByaW1hcnlLZXkoKSxcclxuICAgbmFtZTogdGV4dChcIm5hbWVcIiksXHJcbiAgIGVtYWlsOiB0ZXh0KFwiZW1haWxcIikubm90TnVsbCgpLFxyXG4gICBlbWFpbFZlcmlmaWVkOiB0aW1lc3RhbXAoXCJlbWFpbFZlcmlmaWVkXCIsIHsgbW9kZTogXCJkYXRlXCIgfSksXHJcbiAgIGltYWdlOiB0ZXh0KFwiaW1hZ2VcIiksXHJcbiAgfSlcclxuICBcclxuICBleHBvcnQgY29uc3QgYWNjb3VudHMgPSBwZ1RhYmxlKFxyXG4gIFwiYWNjb3VudFwiLFxyXG4gIHtcclxuICAgIHVzZXJJZDogdGV4dChcInVzZXJJZFwiKVxyXG4gICAgICAubm90TnVsbCgpXHJcbiAgICAgIC5yZWZlcmVuY2VzKCgpID0+IHVzZXJzLmlkLCB7IG9uRGVsZXRlOiBcImNhc2NhZGVcIiB9KSxcclxuICAgIHR5cGU6IHRleHQoXCJ0eXBlXCIpLiR0eXBlPEFkYXB0ZXJBY2NvdW50W1widHlwZVwiXT4oKS5ub3ROdWxsKCksXHJcbiAgICBwcm92aWRlcjogdGV4dChcInByb3ZpZGVyXCIpLm5vdE51bGwoKSxcclxuICAgIHByb3ZpZGVyQWNjb3VudElkOiB0ZXh0KFwicHJvdmlkZXJBY2NvdW50SWRcIikubm90TnVsbCgpLFxyXG4gICAgcmVmcmVzaF90b2tlbjogdGV4dChcInJlZnJlc2hfdG9rZW5cIiksXHJcbiAgICBhY2Nlc3NfdG9rZW46IHRleHQoXCJhY2Nlc3NfdG9rZW5cIiksXHJcbiAgICBleHBpcmVzX2F0OiBpbnRlZ2VyKFwiZXhwaXJlc19hdFwiKSxcclxuICAgIHRva2VuX3R5cGU6IHRleHQoXCJ0b2tlbl90eXBlXCIpLFxyXG4gICAgc2NvcGU6IHRleHQoXCJzY29wZVwiKSxcclxuICAgICBpZF90b2tlbjogdGV4dChcImlkX3Rva2VuXCIpLFxyXG4gICAgc2Vzc2lvbl9zdGF0ZTogdGV4dChcInNlc3Npb25fc3RhdGVcIiksXHJcbiAgfSxcclxuICAoYWNjb3VudCkgPT4gKHtcclxuICAgIGNvbXBvdW5kS2V5OiBwcmltYXJ5S2V5KGFjY291bnQucHJvdmlkZXIsIGFjY291bnQucHJvdmlkZXJBY2NvdW50SWQpLFxyXG4gIH0pXHJcbiAgKVxyXG4gIFxyXG4gIGV4cG9ydCBjb25zdCBzZXNzaW9ucyA9IHBnVGFibGUoXCJzZXNzaW9uXCIsIHtcclxuICAgc2Vzc2lvblRva2VuOiB0ZXh0KFwic2Vzc2lvblRva2VuXCIpLm5vdE51bGwoKS5wcmltYXJ5S2V5KCksXHJcbiAgIHVzZXJJZDogdGV4dChcInVzZXJJZFwiKVxyXG4gICAgIC5ub3ROdWxsKClcclxuICAgICAucmVmZXJlbmNlcygoKSA9PiB1c2Vycy5pZCwgeyBvbkRlbGV0ZTogXCJjYXNjYWRlXCIgfSksXHJcbiAgIGV4cGlyZXM6IHRpbWVzdGFtcChcImV4cGlyZXNcIiwgeyBtb2RlOiBcImRhdGVcIiB9KS5ub3ROdWxsKCksXHJcbiAgfSlcclxuICBcclxuICBleHBvcnQgY29uc3QgdmVyaWZpY2F0aW9uVG9rZW5zID0gcGdUYWJsZShcclxuICAgXCJ2ZXJpZmljYXRpb25Ub2tlblwiLFxyXG4gICB7XHJcbiAgICAgaWRlbnRpZmllcjogdGV4dChcImlkZW50aWZpZXJcIikubm90TnVsbCgpLFxyXG4gICAgIHRva2VuOiB0ZXh0KFwidG9rZW5cIikubm90TnVsbCgpLFxyXG4gICAgIGV4cGlyZXM6IHRpbWVzdGFtcChcImV4cGlyZXNcIiwgeyBtb2RlOiBcImRhdGVcIiB9KS5ub3ROdWxsKCksXHJcbiAgIH0sXHJcbiAgICh2dCkgPT4gKHtcclxuICAgICBjb21wb3VuZEtleTogcHJpbWFyeUtleSh2dC5pZGVudGlmaWVyLCB2dC50b2tlbiksXHJcbiAgIH0pXHJcbiAgKSJdLCJuYW1lcyI6WyJ0aW1lc3RhbXAiLCJwZ1RhYmxlIiwidGV4dCIsInByaW1hcnlLZXkiLCJpbnRlZ2VyIiwidXNlcnMiLCJpZCIsIm5vdE51bGwiLCJuYW1lIiwiZW1haWwiLCJlbWFpbFZlcmlmaWVkIiwibW9kZSIsImltYWdlIiwiYWNjb3VudHMiLCJ1c2VySWQiLCJyZWZlcmVuY2VzIiwib25EZWxldGUiLCJ0eXBlIiwiJHR5cGUiLCJwcm92aWRlciIsInByb3ZpZGVyQWNjb3VudElkIiwicmVmcmVzaF90b2tlbiIsImFjY2Vzc190b2tlbiIsImV4cGlyZXNfYXQiLCJ0b2tlbl90eXBlIiwic2NvcGUiLCJpZF90b2tlbiIsInNlc3Npb25fc3RhdGUiLCJhY2NvdW50IiwiY29tcG91bmRLZXkiLCJzZXNzaW9ucyIsInNlc3Npb25Ub2tlbiIsImV4cGlyZXMiLCJ2ZXJpZmljYXRpb25Ub2tlbnMiLCJpZGVudGlmaWVyIiwidG9rZW4iLCJ2dCJdLCJzb3VyY2VSb290IjoiIn0=\n//# sourceURL=webpack-internal:///(rsc)/./db/schema/users.ts\n");
 
 /***/ })
 
@@ -140,7 +220,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 var __webpack_require__ = require("../../../webpack-runtime.js");
 __webpack_require__.C(exports);
 var __webpack_exec__ = (moduleId) => (__webpack_require__(__webpack_require__.s = moduleId))
-var __webpack_exports__ = __webpack_require__.X(0, ["vendor-chunks/next","vendor-chunks/formidable","vendor-chunks/asap","vendor-chunks/hexoid","vendor-chunks/wrappy","vendor-chunks/once","vendor-chunks/dezalgo"], () => (__webpack_exec__("(rsc)/./node_modules/next/dist/build/webpack/loaders/next-app-loader.js?name=app%2Fapi%2Fadd-music%2Froute&page=%2Fapi%2Fadd-music%2Froute&appPaths=&pagePath=private-next-app-dir%2Fapi%2Fadd-music%2Froute.ts&appDir=C%3A%5CUsers%5CPc%5CDesktop%5Cproject%5Cmusic-player%5Cmusic-player-app%5Capp&pageExtensions=tsx&pageExtensions=ts&pageExtensions=jsx&pageExtensions=js&rootDir=C%3A%5CUsers%5CPc%5CDesktop%5Cproject%5Cmusic-player%5Cmusic-player-app&isDev=true&tsconfigPath=tsconfig.json&basePath=&assetPrefix=&nextConfigOutput=&preferredRegion=&middlewareConfig=e30%3D!")));
+var __webpack_exports__ = __webpack_require__.X(0, ["vendor-chunks/next","vendor-chunks/@swc","vendor-chunks/drizzle-orm","vendor-chunks/@neondatabase","vendor-chunks/@auth","vendor-chunks/jose","vendor-chunks/oauth4webapi","vendor-chunks/preact","vendor-chunks/next-auth","vendor-chunks/preact-render-to-string","vendor-chunks/cookie","vendor-chunks/@panva"], () => (__webpack_exec__("(rsc)/./node_modules/next/dist/build/webpack/loaders/next-app-loader.js?name=app%2Fapi%2Fadd-music%2Froute&page=%2Fapi%2Fadd-music%2Froute&appPaths=&pagePath=private-next-app-dir%2Fapi%2Fadd-music%2Froute.ts&appDir=C%3A%5CUsers%5CPc%5CDesktop%5Cproject%5Cmusic-player%5Cmusic-player-app%5Capp&pageExtensions=tsx&pageExtensions=ts&pageExtensions=jsx&pageExtensions=js&rootDir=C%3A%5CUsers%5CPc%5CDesktop%5Cproject%5Cmusic-player%5Cmusic-player-app&isDev=true&tsconfigPath=tsconfig.json&basePath=&assetPrefix=&nextConfigOutput=&preferredRegion=&middlewareConfig=e30%3D!")));
 module.exports = __webpack_exports__;
 
 })();

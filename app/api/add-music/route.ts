@@ -1,30 +1,42 @@
-// pages/api/add-music.ts
+import React from 'react'
+import { redirect } from "next/navigation"
+import { auth } from '@/app/auth'
+import { Music } from "@/lib/types"
+import { getUserByEmail, getUserMusicsCount } from '@/db/queries/userQueries'
+import { createMusic } from '@/db/queries/musicQueries'
 
-import type { NextApiRequest, NextApiResponse } from 'next'
-import formidable from 'formidable'
+export async function POST(request: Request) {
 
-export const config = {
-  api: {
-    bodyParser: false,
-  },
+  const session = await auth();
+
+  if (!session?.user) {
+      return redirect("/api/auth/signin?callbackUrl=/profile");
+  }
+
+  const user = session?.user;
+
+  let userFromDb;
+  let email:string="";
+  if (user?.email) {
+    userFromDb = await getUserByEmail(user.email);
+    email = user.email;
+  }
+
+  if (!userFromDb) {
+    throw new Error("User not found in database");
+  }
+
+  var jsonReq = await request.json();
+
+  let music = {} as Music;
+  music.userId = userFromDb?.id;
+  music.url = jsonReq.url;
+  music.artist = jsonReq.artist;
+  music.title = jsonReq.title;
+
+  await createMusic(music,email);
+
+  return new Response("ok");
 }
 
-export default async function handler(
-  req: NextApiRequest,
-  res: NextApiResponse
-) {
-  const form = new formidable.IncomingForm()
 
-  form.parse(req, async (err, fields, files) => {
-    if (err) {
-      res.status(500).json({ error: 'Error parsing the form data' })
-      return
-    }
-
-    // Your form data will be available in fields
-    console.log(fields)
-
-    // You can send a response back to the client
-    res.status(200).json({ message: 'Success' })
-  })
-}

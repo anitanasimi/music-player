@@ -27,6 +27,28 @@ export default function MusicPlayer(music: Music) {
     };
 
 
+    const handleDelete = () => {
+        fetch('/api/delete-music', {
+            method: 'DELETE',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                id: music.id, // replace with the actual id or data you need to send
+            }),
+        })
+            .then(response => response.json())
+            .then(data => {
+                console.log(data);
+                if (data.message === 'ok') {
+                    // handle successful deletion here, e.g., remove item from state
+                }
+            })
+            .catch((error) => {
+                console.error('Error:', error);
+            });
+    };
+
     useEffect(() => {
         const audio = audioRef.current;
         if (!audio) return;
@@ -43,7 +65,7 @@ export default function MusicPlayer(music: Music) {
     }, []);
 
     return (
-        <div className="flex h-auto w-auto bg-pink-500 rounded-xl p-2 m-2">
+        <div className="flex items-center justify-center h-64 w-64 bg-pink-500 rounded-xl p-2 m-3">
             <div className="max-w-md mx-auto bg-white rounded-xl shadow-md overflow-hidden md:max-w-2xl m-4">
                 <div className="md:flex">
                     <div className="p-8">
@@ -56,9 +78,18 @@ export default function MusicPlayer(music: Music) {
                         </div>
                         <input type="range" min="0" max="100" value={progress} onChange={handleSeek} className="w-full h-2 bg-pink-200 rounded-full mt-4 cursor-pointer" />
                         <audio ref={audioRef} src={music.url} />
+                        <div className="flex items-center justify-center mt-4">
+                            <button
+                                className="bg-red-500 hover:bg-red-600 text-white rounded-full p-2 mx-1"
+                                onClick={handleDelete}
+                            >
+                                Delete
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
+
     );
 }

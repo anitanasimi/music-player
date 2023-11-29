@@ -1,31 +1,40 @@
 "use client"
 
+import { redirect } from "next/navigation"
 import { useState } from 'react'
 
 const AddMusicPage = () => {
     const [title, setTitle] = useState('');
     const [artist, setArtist] = useState('');
-    const [file, setFile] = useState<File | null>(null);
+    const [file, setFile] = useState('');
 
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-        if (file) {
-            if (!['audio/mpeg', 'audio/wav', 'audio/ogg'].includes(file.type)) {
-                alert('Invalid file type. Please select an audio file.');
-                return;
-            }
-            if (file.size > 20 * 1024 * 1024) {
-                alert('File size exceeds 20MB');
-                return;
-            }
-        } else {
-            alert('No file selected. Please choose an audio file to proceed.');
-            return;
+
+        var obj = {
+            title: title,
+            artist: artist,
+            url: file
         }
-        await fetch("/api/add-music", {
-            method: "POST",
-            body: new FormData(e.target as HTMLFormElement),
-        })        
+
+        let jsonStr = JSON.stringify(obj);
+
+        const res = await fetch('/api/add-music', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: jsonStr,
+        });
+
+        const { data } = await res.json();
+        alert({data});
+        if(data === 'ok'){
+            setTitle('');
+            setArtist('');
+            setFile('');
+            redirect("/playlist");
+        }
     };
 
     return (
@@ -47,7 +56,7 @@ const AddMusicPage = () => {
                     <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="file">
                         Music File
                     </label>
-                    <input className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="file" type="file" onChange={(e) => e.target.files && setFile(e.target.files[0])} />
+                    <input className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="file" type="text" value={file} onChange={(e) => setFile(e.target.value)} />
                     <span className="font-light text-slate-500">Please ensure that the selected audio file is no larger than 20MB.</span>
                 </div>
                 <div className="flex items-center justify-between">
